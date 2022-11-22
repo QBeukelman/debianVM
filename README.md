@@ -262,6 +262,8 @@ What is `tty`? The requiretty option means that the exploit code won't be able t
 
 UFW (Uncomplicated Firewall) is a software application responsible for ensuring that the system administrator can manage the IP-table in a simple way. Since it is very difficult to work with IPtables, UFW provides is with an interface to modify the firewall of our device (netfilter) without compromising security. We can choose which ports to make available and which to close, greatly improving all security related communication between devices.
 
+<br />
+
 #### 1. Check that UFW program has been installed and is functioning correctly
 
 ```bash
