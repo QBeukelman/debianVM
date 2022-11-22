@@ -329,7 +329,7 @@ There are two commands that will be very helpful in case of being system adminis
   sudo crontab -e
 ```
 
-Remove or commit previous cron "schedule" and add next lines in crontab file:
+*Remove or commit previous cron "schedule" and add next lines in crontab file:*
 
 ```bash
   # Run script
@@ -338,7 +338,7 @@ Remove or commit previous cron "schedule" and add next lines in crontab file:
   */1 * * * * sleep 30s && /usr/local/bin/monitoring.sh
 ```
 
-To stop script running on boot you just need to remove or commit the following line in `crontab` file.
+*To stop script running on boot you just need to remove or commit the following line in `crontab` file.*
 
 ```bash
   @reboot /usr/local/bin/monitoring.sh
