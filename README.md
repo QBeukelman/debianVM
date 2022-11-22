@@ -161,7 +161,7 @@ Passwords provide the first line of defense against unauthorized access to your 
   sudo cat /etc/hostname
 ```
 
-#### 2. Modify this hostname
+#### 2. Modify hostname
 
 ```bash
   # Update hostname
