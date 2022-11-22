@@ -106,14 +106,65 @@ Some differences are:
 
 Each user on the system is uniquely identified, and users may belong to groups. Every user of the system has a unique login name (username) and a corresponding numeric user ID (UID). For each user, these are defined by a line in the system password file, `/etc/passwd`, which includes, **group ID**, **home directory** and **login shell**.
 
-### Groups
+### What is a user group
 
 For administrative purposes, in particular, for controlling access to files and other system resources, it is useful to organize users into group. 
 
 > For example, the people in a team working on a single project, and thus sharing a common set of files, might all be made members of the same group. In early UNIX implementations, a user could be a member of only one group.
 
 <br />
+
+#### 1. Check user with “intra” name is present and belongs to "sudo” and “user42” groups
+
+```bash
+  getent group | grep qbeukelm
+```
+
+#### 2. Create new user
+
+```bash
+  # Add user
+  sudo adduser username
+  # Verify password expiry info
+  sudo chage -l username
+```
+
+#### 3. Check password policy
+
+```bash
+  # Password expiration policy
+  cat /etc/login.defs
+  # Password strength
+  cat /etc/pam.d/common-password
+```
+
+#### 4. Create new group and assign user to it
+
+```bash
+  # Create group
+  getent group group_name
+  # Add user to group
+  sudo adduser username group_name
+  # Verify
+  getent group | grep username
+```
+
+#### 5. Benifits of strong password policy
+
+Passwords provide the first line of defense against unauthorized access to your computer and personal information. The stronger your password, the more protected your computer will be from hackers and malicious software.
+
 <br />
+<br />
+
+
+
+## Hostname and Partitions
+
+<br />
+<br />
+
+
+
 
 ## What is a Virtual Machine
 
@@ -132,3 +183,4 @@ Include the following header to your `.c` file:
 You can use this third party tester to measure the capability of the library:
 
 - [Francinette](https://github.com/xicodomingues/francinette "Francinette")
+
