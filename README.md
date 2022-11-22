@@ -9,7 +9,6 @@ You will create your first machine in VirtualBox (or UTM if you can’t use Virt
 <br />
 
 
-
 ## What is a Virtual Machine
 
 ### Virtual Machine
@@ -20,7 +19,6 @@ A virtual machine is a software capable of installing an operating system within
 > Image from: [The Linux Programming Interface, 2010 (Michael Kerrisk)](https://sciencesoftcode.files.wordpress.com/2018/12/the-linux-programming-interface-michael-kerrisk-1.pdf "The Linux Programming Interface, 2010 (Michael Kerrisk)")
 
 <br />
-
 
 
 ### Benifits of using a Virtual Machine
@@ -74,7 +72,6 @@ Some differences are:
 <br />
 
 
-
 ## Simple Checks
 
 #### 1. Check that the UFW service is started
@@ -97,7 +94,6 @@ Some differences are:
 
 <br />
 <br />
-
 
 
 ## Users
@@ -157,7 +153,6 @@ Passwords provide the first line of defense against unauthorized access to your 
 <br />
 
 
-
 ## Hostname and Partitions
 
 #### 1. Check that the host name is correctly formatted
@@ -212,7 +207,6 @@ With LVM, we can extend the storage of any position (A Logical Volume). This is 
 <br />
 
 
-
 ## Sudo
 
 ### What is sudo
@@ -262,7 +256,6 @@ What is `tty`? The requiretty option means that the exploit code won't be able t
 
 
 
-
 ## UFW
 
 ### What is UFW
@@ -298,3 +291,57 @@ UFW (Uncomplicated Firewall) is a software application responsible for ensuring 
 <br />
 
 
+
+## Monitoring Script
+
+### What is Crontab
+
+There are two commands that will be very helpful in case of being system administrator, which are:
+
+- **Cron:** Linux task manager that allows us to excite commands at a specific time. We can automate some tasks, simply by telling corn what command to run when. E.g. we want to restart the server every day at 04:00.
+- **Wall:** Can be used by the root user to send a message to all users currently connected to the server. If the system administrator wants to alert about major changes in the server, that could cause users to log out, the root user can alert them with wall.
+
+<br />
+
+
+#### 1. Explain monitoring.sh
+
+```bash
+  # Nevigate to monitoring.sh
+  cd /usr/local/bin/
+  # Edit monitoring.sh
+  nano monitoring.sh
+  # Execute script
+  ./monitoring.sh
+```
+
+#### 2. Monitoring script excicute every 10 minutes
+
+```bash
+  # Open Crontab configuration
+  sudo crontab -u root -e
+```
+
+#### 3. Make the script runs every 30s without editing it
+
+```bash
+  # Open Crontab configuration
+  sudo crontab -e
+```
+
+Remove or commit previous cron "schedule" and add next lines in crontab file:
+
+```bash
+  # Run script
+  */1 * * * * /usr/local/bin/monitoring.sh
+  # Wait 30s and run script
+  */1 * * * * sleep 30s && /usr/local/bin/monitoring.sh
+```
+
+To stop script running on boot you just need to remove or commit the following line in `crontab` file.
+
+```bash
+  @reboot /usr/local/bin/monitoring.sh
+```
+
+<br />
