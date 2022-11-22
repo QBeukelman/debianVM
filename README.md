@@ -110,7 +110,7 @@ Each user on the system is uniquely identified, and users may belong to groups. 
 
 For administrative purposes, in particular, for controlling access to files and other system resources, it is useful to organize users into group. 
 
-> For example, the people in a team working on a single project, and thus sharing a common set of files, might all be made members of the same group. In early UNIX implementations, a user could be a member of only one group.
+> e.g. the people in a team working on a single project, and thus sharing a common set of files, might all be made members of the same group. In early UNIX implementations, a user could be a member of only one group.
 
 <br />
 
@@ -160,27 +160,141 @@ Passwords provide the first line of defense against unauthorized access to your 
 
 ## Hostname and Partitions
 
-<br />
-<br />
-
-
-
-
-## What is a Virtual Machine
-
-Include the following header to your `.c` file:
+#### 1. Check that the host name is correctly formatted
 
 ```bash
-  make
+  sudo cat /etc/hostname
 ```
 
-```c
-  #include "ft_libft.h"
+#### 2. Modify this hostname
+
+```bash
+  # Update hostname
+  sudo nano /etc/hostname
+  # Reboot
+  sudo reboot
 ```
 
-## Testing
+#### 3. View partitions on Virtual Machine
 
-You can use this third party tester to measure the capability of the library:
+```bash
+  lsblk
+```
+```bash
+  # lsblk output
+  NAME                        MAJ:MIN RM  SIZE RO TYPE  MOUNTPOINT
+  sda                           8:0    0    8G  0 disk  
+  |-sda1                        8:1    0  487M  0 part  /boot
+  |-sda2                        8:2    0    1K  0 part  
+  `-sda5                        8:5    0  7.5G  0 part  
+    `-sda5_crypt              254:0    0  7.5G  0 crypt 
+      |-username42--vg-root   254:1    0  2.8G  0 lvm   /
+      |-username42--vg-swap_1 254:2    0  976M  0 lvm   [SWAP]
+      `-username42--vg-home   254:3    0  3.8G  0 lvm   /home
+  sr0                          11:0    1 1024M  0 rom  
+```
+<br />
 
-- [Francinette](https://github.com/xicodomingues/francinette "Francinette")
+
+### What is LVM (Logical Volume Manager)
+
+Is an abstraction layer between a storage device and file system. The main advantage is that LVM has more flexibility when it comes to managing partitions. 
+
+> e.g. Suppose we create four partitions on our disc. If we wish to expand the storage of the first three, we will not be able to because there is no space available next to them.
+
+With LVM, we can extend the storage of any position (A Logical Volume). This is done by using available storage located on a different physical disc (which can not be done with regular partitions). It is also possible to move logical volumes between different physical devices.
+
+- **Physical Volume (PV)**: physical storage device, hard disc, SD card, floppy,… which provides the storage available for use.
+- **Volume Group (VG)**: to use this space, it must be allocated in a volume group. It is like a virtual storage disc that will be used by Logical Volumes.
+- **Logical Volume (LV)**: devices used to create file systems, swaps, virtual machines,… If the VG is the storage disc, the LV are the partitions made on the disc.
+
+<br />
+<br />
+
+
+
+## Sudo
+
+### What is sudo
+
+Sudo (**s**ubstitute **u**ser, **do**) is a program for Unix-like computer operating systems that allows a system administrator to give certain users (or groups of users) the ability to run some (or all) commands as root while logging all commands and arguments. Sudo operates on a per-command basis, it is not a replacement for the shell. Its features include:
+
+- Restrict what commands a user may run on a per-host basis.
+- Logging of each command, providing a clear audit trail of who did what.
+- Sudo uses timestamp files to implement a “ticketing” system. When a user invokes sudo and enters their password, they are granted a ticket for 5 minutes. This avoids the problem of leaving a root shell where others can physically get to your keyboard.
+- Sudo’s configuration file, the `sudoers` file, is setup in such a way that the same sudoers file may be used on many machines. This allows for central administration while keeping the flexibility to define a user’s privileges on a per-host basis.
+
+<br />
+
+#### 1. Check that the “sudo” program is installed and add the new user to it
+
+```bash
+  # Verify sudo version
+  sudo --version
+  # Add user to group
+  sudo adduser username group_name
+```
+
+#### 2. Verify sudo configuration
+
+What is `tty`? The requiretty option means that the exploit code won't be able to directly upgrade its privileges by running sudo.
+
+```bash
+  # Check members of sudo group
+  getent group sudo
+  # show sudo confiuration
+  sudo cat /etc/sudoers
+```
+
+#### 3. Verify sudo logs
+
+```bash
+  # Navigate to sudo directory
+  cd /var/log/sudo
+  # Update sudo
+  sudo apt update
+  # Check sudo logs
+  cat sudo.log
+```
+
+<br />
+<br />
+
+
+
+
+## UFW
+
+### What is UFW
+
+UFW (Uncomplicated Firewall) is a software application responsible for ensuring that the system administrator can manage the IP-table in a simple way. Since it is very difficult to work with IPtables, UFW provides is with an interface to modify the firewall of our device (netfilter) without compromising security. We can choose which ports to make available and which to close, greatly improving all security related communication between devices.
+
+#### 1. Check that UFW program has been installed and is functioning correctly
+
+```bash
+  # Verify UFW installation
+  ufw --version
+  # Check status
+  sudo ufw status
+```
+
+#### 2. List the active rules in UFW
+
+```bash
+  # Active sudo rules
+  sudo ufw status numbered
+```
+
+#### 3. Adding and removing ports
+
+```bash
+  # Open new port
+  sudo ufw allow ####
+  # Remove port
+  sudo ufw delete (number, e.g. 5 or 6)
+```
+
+<br />
+<br />
+
 
