@@ -113,7 +113,7 @@ For administrative purposes, in particular, for controlling access to files and 
 #### 1. Check user with “intra” name is present and belongs to "sudo” and “user42” groups
 
 ```bash
-  getent group | grep qbeukelm
+  getent group | grep username
 ```
 
 #### 2. Create new user
