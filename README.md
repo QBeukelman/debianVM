@@ -343,7 +343,7 @@ There are two commands that will be very helpful in case of being system adminis
 *To stop script running on boot you just need to remove or commit the following line in `crontab` file.*
 
 ```bash
-  @reboot /usr/local/bin/monitoring.sh
+  @reboot sleep 5;/usr/local/bin/monitoring.sh
 ```
 
 <br />
