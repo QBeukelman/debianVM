@@ -40,7 +40,7 @@ The term operating system is commonly used with two differet meanings:
 
 - More narrowly, the central software that manages and allocates computer resources, e.g. CPU, RAM, and devices.
 
-The term kernel is often used as a synonym for the second meaning, and it is with this meaning of the term operating system that we are concerned. Among other things, the kernel performs the following tasks:
+The term kernel is often used as a synonym for the second meaning, and it is with this meaning of the term operating system that we are concerned. Among other things, the kernel performs the following tasks:
 
 - Process scheduling
 - Memory management
@@ -67,6 +67,38 @@ Some differences are:
 | Complicated GUI | User friendly GUI |
 | YUM package manager | apt-get package manager |
 | Limited packages | Large assortment of packages |
+
+<br />
+<br />
+
+
+## Apt and Aptitude
+
+In a Debian-based OS distribution, the default package manager uses dpkg. This tool allows to install, remove and manage programs on the OS. However, in most cases these programs come with a list of dependencies that must be installed for the main program to run. With APT we can install .deb programs easily without worrying about dependencies.
+
+#### APT (Advanced Package Tool)
+
+Which is a tool that uses dpkg, can be used to install all the necessary dependencies when installing a program. Meaning we can install a functioning program with one command. APT can work with different back-end and front-end services to make use of its services.
+
+> APT-get, allows us to install and remove packages. Along with APT-get, there are also many tools like APT-cache to manage programs. In these cases APT-get and APT-cache are used by APT.
+
+#### Aptitude
+
+In case we want to use a graphical interface, we have to use Aptitude. It manages package dependencies in a better way, allowing the user to choose between different dependencies when installing a program.
+
+<br />
+
+
+### AppArmor
+
+Mandatory Access Control (MAC) security. Allows the system administrator to restrict the actions the processor can perform. In AppArmor possesses are restricted by profiles.
+
+> e.g. Camera: if the administrator denies privileges to the application requesting to use the camera, the application will not be able to access the camera. AppArmor blocks the application so that the damage does not spread to the rest of the system.
+
+Profiles can work in complain or enforce modes:
+
+-   **Enforce mode:**  AppArmor prohibits the application from performing restricted tasks.
+-   **Complain mode:**  Allows the applications to perform prohibited tasks, but creates a registry entry to display the complaint.
 
 <br />
 <br />
@@ -292,6 +324,28 @@ UFW (Uncomplicated Firewall) is a software application responsible for ensuring 
 <br />
 <br />
 
+## How to use SSH (Secure Shell)
+
+SSH or secure shell is a remote administration protocol that allows users to control and modify there server, over the internet, thanks to an authentication mechanism. It provides a mechanism to authenticate the user remotely, transfer data from client to host, and return a response request made by the client.
+
+SSH uses encryption techniques to ensure that all client-to-host and host-to-client are done using encryption. An advantage of this is that the user can communicate remotely with their server using the computers terminal. Once authenticated, the user will be able to work with the server from their terminal.
+
+```bash
+  ssh {username}@{IP_host} -p {port} 
+  # local host
+  ssh {username}@{localhost} -p {port} 
+```
+<br />
+
+
+#### 3 different techniques that use SSH for encryption:
+
+-   **Symmetric encryption:**  Uses the same secret key for both encryption and decryption of a message, for both client and host. Anyone with the password can access the message.
+-   **Asymmetric encryption:**  Two separate keys for encryption and decryption. These are known as public and private keys, which together form a matching pair.
+-   **Hashing:**  Made in a way that they don't need to be decrypted. If the client has the correct input, they can create a cryptographic hash and SSH will check if both hashes are the same.
+
+<br />
+<br />
 
 
 ## Monitoring Script
