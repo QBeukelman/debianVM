@@ -401,3 +401,16 @@ There are two commands that will be very helpful in case of being system adminis
 ```
 
 <br />
+<br />
+
+
+## Machine Signiture
+
+Navigate to `VirtualBox VMs`.
+
+```bash
+  shasum Debain VM.vdi
+```
+
+<br />
+
