@@ -426,6 +426,7 @@ There are two commands that will be very helpful in case of being system adminis
 > - `who -b` Information about users who are currently logged in. "-b" time of last system boot.
 > - `netstat -an` Print network connections. "-a" show both listening and non-listening sockets. "-n" Show numerical addresses.
 > - `journalctl` Query the contents of the systemd(1)journal. If a file path refers to an executable script, a "_COMM=" match for the script name is added to the query.
+> - `printf("%.1f%%")` Printf expects and integer. The -f flag allows us to print a double (0.0).
 
 <br />
 <br />
