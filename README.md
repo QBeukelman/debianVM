@@ -180,7 +180,7 @@ For administrative purposes, in particular, for controlling access to files and 
 <br />
 
 
-#### Strong password policy 
+#### Strong Password Policy 
 
 > - retry=3 - User may enter password 3 times.
 > - minlen=10 - At least 10 characters long.
@@ -416,6 +416,9 @@ There are two commands that will be very helpful in case of being system adminis
 ```bash
   @reboot sleep 5;/usr/local/bin/monitoring.sh
 ```
+<br />
+
+#### Monitoring Script Explanation
 
 > - `free -m` - Get report of system memory usage. "-m" Display the amount of memory in mebibytes.
 > - `df -h` - "Disc free" used to display information related to file systems about total space and available space. "-h" human readable.
