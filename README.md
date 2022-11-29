@@ -177,6 +177,10 @@ For administrative purposes, in particular, for controlling access to files and 
   # Verify
   getent group | grep username
 ```
+<br />
+
+
+#### Strong password policy 
 
 > - retry=3 - User may enter password 3 times.
 > - minlen=10 - At least 10 characters long.
