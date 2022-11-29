@@ -417,6 +417,13 @@ There are two commands that will be very helpful in case of being system adminis
   @reboot sleep 5;/usr/local/bin/monitoring.sh
 ```
 
+> - `free -m` - Get report of system memory usage. "-m" Display the amount of memory in mebibytes.
+> - `df -h` - "Disc free" used to display information related to file systems about total space and available space. "-h" human readable.
+> - `top -bn1` - "table of processes" real-time view of running processes in Linux. "-b" batch mode. "-n1" limit iteration number.
+> - `who -b` - Information about users who are currently logged in. "-b" time of last system boot.
+> - netstat -an - Print network connections. "-a" show both listening and non-listening sockets. "-n" Show numerical addresses.
+> - `journalctl` - query the contents of the systemd(1)journal. If a file path refers to an executable script, a "_COMM=" match for the script name is added to the query.
+
 <br />
 <br />
 
