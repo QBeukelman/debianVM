@@ -45,7 +45,7 @@ The term kernel is often used as a synonym for the second meaning, and it is wit
 - Process scheduling
 - Memory management
 - Provision of a file system
-- Creation an termination of a process
+- Creation and termination of a process
 - Access to devices
 - Networking
 - Provision of a system call application programming interface (API)
