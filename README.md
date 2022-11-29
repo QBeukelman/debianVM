@@ -182,14 +182,14 @@ For administrative purposes, in particular, for controlling access to files and 
 
 #### Strong Password Policy 
 
-> - `retry=3` - User may enter password 3 times.
-> - `minlen=10` - At least 10 characters long.
-> - `ucredit=1` - Maximum number of lowercase characters that will generate a credit.
-> - `dcredit=-1` - You have to include at least one digit.
-> - `maxrepeat=3` - Maximum number of times a character may be repeated.
-> - `reject_username` - Rejects the password if it contains the username.
+> - `retry=3` User may enter password 3 times.
+> - `minlen=10` At least 10 characters long.
+> - `ucredit=1` Maximum number of lowercase characters that will generate a credit.
+> - `dcredit=-1` You have to include at least one digit.
+> - `maxrepeat=3` Maximum number of times a character may be repeated.
+> - `reject_username` Rejects the password if it contains the username.
 > - `difok=7` - The number of characters in the new password that doesn't appear in the previous password.
-> - `enforce_for_root` - Enforce this password policy for the root user.
+> - `enforce_for_root` Enforce this password policy for the root user.
 
 <br />
 
@@ -420,12 +420,12 @@ There are two commands that will be very helpful in case of being system adminis
 
 #### Monitoring Script Explanation
 
-> - `free -m` - Get report of system memory usage. "-m" Display the amount of memory in mebibytes.
-> - `df -h` - "Disc free" used to display information related to file systems about total space and available space. "-h" human readable.
-> - `top -bn1` - "table of processes" real-time view of running processes in Linux. "-b" batch mode. "-n1" limit iteration number.
-> - `who -b` - Information about users who are currently logged in. "-b" time of last system boot.
+> - `free -m` Get report of system memory usage. "-m" Display the amount of memory in mebibytes.
+> - `df -h` "Disc free" used to display information related to file systems about total space and available space. "-h" human readable.
+> - `top -bn1` "table of processes" real-time view of running processes in Linux. "-b" batch mode. "-n1" limit iteration number.
+> - `who -b` Information about users who are currently logged in. "-b" time of last system boot.
 > - netstat -an - Print network connections. "-a" show both listening and non-listening sockets. "-n" Show numerical addresses.
-> - `journalctl` - query the contents of the systemd(1)journal. If a file path refers to an executable script, a "_COMM=" match for the script name is added to the query.
+> - `journalctl` Query the contents of the systemd(1)journal. If a file path refers to an executable script, a "_COMM=" match for the script name is added to the query.
 
 <br />
 <br />
