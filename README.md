@@ -182,14 +182,14 @@ For administrative purposes, in particular, for controlling access to files and 
 
 #### Strong Password Policy 
 
-> - retry=3 - User may enter password 3 times.
-> - minlen=10 - At least 10 characters long.
-> - ucredit=1 - Maximum number of lowercase characters that will generate a credit.
-> - dcredit=-1 - You have to include at least one digit.
-> - maxrepeat=3 - Maximum number of times a character may be repeated.
-> - reject_username - Rejects the password if it contains the username.
-> - difok=7 - The number of characters in the new password that doesn't appear in the previous password.
-> - enforce_for_root - Enforce this password policy for the root user.
+> - `retry=3` - User may enter password 3 times.
+> - `minlen=10` - At least 10 characters long.
+> - `ucredit=1` - Maximum number of lowercase characters that will generate a credit.
+> - `dcredit=-1` - You have to include at least one digit.
+> - `maxrepeat=3` - Maximum number of times a character may be repeated.
+> - `reject_username` - Rejects the password if it contains the username.
+> - `difok=7` - The number of characters in the new password that doesn't appear in the previous password.
+> - `enforce_for_root` - Enforce this password policy for the root user.
 
 <br />
 
