@@ -188,7 +188,7 @@ For administrative purposes, in particular, for controlling access to files and 
 > - `dcredit=-1` You have to include at least one digit.
 > - `maxrepeat=3` Maximum number of times a character may be repeated.
 > - `reject_username` Rejects the password if it contains the username.
-> - `difok=7` - The number of characters in the new password that doesn't appear in the previous password.
+> - `difok=7` The number of characters in the new password that doesn't appear in the previous password.
 > - `enforce_for_root` Enforce this password policy for the root user.
 
 <br />
