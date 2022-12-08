@@ -61,7 +61,7 @@ Some differences are:
 
 | CentOS       | Debian     |
 | :---        | :---      |
-| User friendly interface | Less user friendly with terminal interface |
+| Advanced functionality | Basic functionality |
 | No multi-architecture support | Multi-architecture support |
 | Updates take time, making it stable | Release cycle of 2 years |
 | Dificult to upgrade | Easy to upgrade |
